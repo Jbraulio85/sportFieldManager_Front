@@ -47,8 +47,7 @@ export const Fields = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
-            {fields &&
-              fields.map((field) => (
+            {fields?.map((field) => (
                 <Card key={field._id} sx={{ maxWidth: 345 }}>
                   <CardActionArea onClick={() => handleClickOpen(field)}>
                     <CardMedia

@@ -14,7 +14,7 @@ export const useGetReservations = () => {
 
         if (response && Array.isArray(response.reservations)) {
           setReservations(response.reservations);
-        } else if (response && response.message) {
+        } else if (response?.message) {
           setError(response.message);
           toast.error(response.message);
         } else {
