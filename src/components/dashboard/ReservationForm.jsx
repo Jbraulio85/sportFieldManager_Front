@@ -59,7 +59,7 @@ export const ReservationForm = ({ field }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    
     await createReservation(
       formData.fieldId,
       formData.uid,
