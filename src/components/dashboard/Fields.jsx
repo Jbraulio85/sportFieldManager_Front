@@ -48,55 +48,55 @@ export const Fields = () => {
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {fields?.map((field) => (
-                <Card key={field._id} sx={{ maxWidth: 345 }}>
-                  <CardActionArea onClick={() => handleClickOpen(field)}>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={`https://res.cloudinary.com/dcrgnm3ud/image/upload/v123456789/${field.photo}`}
-                      alt={field.fieldName}
-                      style={{ objectFit: "cover" }}
-                    />
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                        align="center"
-                      >
-                        {field.fieldName}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        <Typography
-                          component="span"
-                          style={{ fontWeight: "bold" }}
-                        >
-                          Gramilla:
-                        </Typography>{" "}
-                        {field.fieldType}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        <Typography
-                          component="span"
-                          style={{ fontWeight: "bold" }}
-                        >
-                          Capacidad:
-                        </Typography>{" "}
-                        {field.capacity}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions sx={{ justifyContent: "center" }}>
-                    <Button
-                      size="small"
-                      color="primary"
-                      onClick={() => handleClickOpen(field)}
+              <Card key={field._id} sx={{ maxWidth: 345 }}>
+                <CardActionArea onClick={() => handleClickOpen(field)}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={`https://res.cloudinary.com/dcrgnm3ud/image/upload/v123456789/${field.photo}`}
+                    alt={field.fieldName}
+                    style={{ objectFit: "cover" }}
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      align="center"
                     >
-                      Alquilar
-                    </Button>
-                  </CardActions>
-                </Card>
-              ))}
+                      {field.fieldName}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      <Typography
+                        component="span"
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Gramilla:
+                      </Typography>{" "}
+                      {field.fieldType}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      <Typography
+                        component="span"
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Capacidad:
+                      </Typography>{" "}
+                      {field.capacity}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions sx={{ justifyContent: "center" }}>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => handleClickOpen(field)}
+                  >
+                    Alquilar
+                  </Button>
+                </CardActions>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
