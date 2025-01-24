@@ -23,10 +23,10 @@ export const useListFields = () => {
         }
       } catch (error) {
         toast.error(
-          "No se pudo conectar con el servidor. Intenta de nuevo más tarde."
+          "No se pudo conectar con el servidor. Intenta de nuevo más tarde.",
         );
         setError(
-          "No se pudo conectar con el servidor. Intenta de nuevo más tarde."
+          "No se pudo conectar con el servidor. Intenta de nuevo más tarde.",
         );
       } finally {
         setIsLoading(false);

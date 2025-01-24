@@ -65,7 +65,7 @@ export const ReservationForm = ({ field }) => {
       formData.uid,
       formData.startTime,
       formData.endTime,
-      formData.payment
+      formData.payment,
     );
   };
 

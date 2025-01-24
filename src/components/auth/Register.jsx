@@ -23,7 +23,10 @@ export const Register = ({ switchAuthHandler }) => {
 
     let picture = profilePicture;
     if (profilePicture === null) {
-      const img = await axios.get("https://cdn-icons-png.flaticon.com/512/5524/5524669.png", { responseType: "blob" });
+      const img = await axios.get(
+        "https://cdn-icons-png.flaticon.com/512/5524/5524669.png",
+        { responseType: "blob" },
+      );
       picture = new File([img.data], "avatarDefault.png", {
         type: img.data.type,
       });

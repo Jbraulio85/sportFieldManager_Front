@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { listReservations } from '../../services';
-import toast from 'react-hot-toast';
+import { useState, useEffect } from "react";
+import { listReservations } from "../../services";
+import toast from "react-hot-toast";
 
 export const useGetReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -18,11 +18,11 @@ export const useGetReservations = () => {
           setError(response.message);
           toast.error(response.message);
         } else {
-          setError('Unexpected response format');
-          toast.error('Unexpected response format');
+          setError("Unexpected response format");
+          toast.error("Unexpected response format");
         }
       } catch (e) {
-        const errorMessage = e.message || 'Error al listar las reservaciones';
+        const errorMessage = e.message || "Error al listar las reservaciones";
         setError(errorMessage);
         toast.error(errorMessage);
       } finally {
