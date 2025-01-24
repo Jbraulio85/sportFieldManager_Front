@@ -56,9 +56,7 @@ const columns = [
   },
 ];
 
-const onChange = (pagination, filters, sorter, extra) => {
-  console.log("params", pagination, filters, sorter, extra);
-};
+const onChange = (pagination, filters, sorter, extra) => {};
 
 export const MyReservations = () => {
   const { reservations, loading, error } = useGetReservations();
