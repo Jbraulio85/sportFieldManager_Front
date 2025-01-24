@@ -7,11 +7,25 @@ export const useRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const register = async (email, username, password, name, surname, profilePicture) => {
+  const register = async (
+    email,
+    username,
+    password,
+    name,
+    surname,
+    profilePicture,
+  ) => {
     setIsLoading(true);
 
     try {
-      const data = await registerRequest({ email, username, password, name, surname, profilePicture });
+      const data = await registerRequest({
+        email,
+        username,
+        password,
+        name,
+        surname,
+        profilePicture,
+      });
 
       if (data.error) {
         toast.error(data.message || "Existió un error al registrarse");
@@ -20,7 +34,9 @@ export const useRegister = () => {
         navigate("/");
       }
     } catch (error) {
-      toast.error("No se pudo conectar con el servidor. Intenta de nuevo más tarde.");
+      toast.error(
+        "No se pudo conectar con el servidor. Intenta de nuevo más tarde.",
+      );
     } finally {
       setIsLoading(false);
     }

@@ -8,11 +8,23 @@ export const useReservation = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const createReservation = async (fieldId, uid, startTime, endTime, payment) => {
+  const createReservation = async (
+    fieldId,
+    uid,
+    startTime,
+    endTime,
+    payment,
+  ) => {
     setIsLoading(true);
 
     try {
-      const data = await createReservationRequest({ fieldId, uid, startTime, endTime, payment });
+      const data = await createReservationRequest({
+        fieldId,
+        uid,
+        startTime,
+        endTime,
+        payment,
+      });
 
       if (data.error) {
         toast.error(data.message || "Existió un error al realizar la reserva");
@@ -21,7 +33,9 @@ export const useReservation = () => {
         navigate("/myReservations");
       }
     } catch (error) {
-      toast.error("No se pudo conectar con el servidor. Intenta de nuevo más tarde.");
+      toast.error(
+        "No se pudo conectar con el servidor. Intenta de nuevo más tarde.",
+      );
     } finally {
       setIsLoading(false);
     }

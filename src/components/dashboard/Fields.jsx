@@ -25,7 +25,7 @@ export const Fields = () => {
 
   const handleClickOpen = (field) => {
     const userDetails = localStorage.getItem("user");
-    
+
     if (userDetails) {
       setSelectedField(field);
       setOpen(true);
@@ -49,10 +49,7 @@ export const Fields = () => {
             {error && <p>{error}</p>}
             {fields &&
               fields.map((field) => (
-                <Card
-                  key={field._id}
-                  sx={{ maxWidth: 345 }}
-                >
+                <Card key={field._id} sx={{ maxWidth: 345 }}>
                   <CardActionArea onClick={() => handleClickOpen(field)}>
                     <CardMedia
                       component="img"
@@ -113,9 +110,7 @@ export const Fields = () => {
           </Typography>
         </DialogTitle>
         <DialogContent>
-          {selectedField && (
-            <ReservationForm field={selectedField} />
-          )}
+          {selectedField && <ReservationForm field={selectedField} />}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

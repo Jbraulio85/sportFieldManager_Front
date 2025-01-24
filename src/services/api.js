@@ -19,7 +19,7 @@ apiClient.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 export const login = async (data) => {
@@ -65,7 +65,6 @@ export const register = async (data) => {
 
     return response.data;
   } catch (e) {
-
     const errorResponse = e.response?.data;
 
     if (Array.isArray(errorResponse?.errors)) {
@@ -155,11 +154,15 @@ export const createReservation = async (data) => {
       formData.append(key, data[key]);
     }
 
-    const response = await apiClient.post("/reservation/addReservation", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
+    const response = await apiClient.post(
+      "/reservation/addReservation",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       },
-    });
+    );
 
     return response.data;
   } catch (e) {

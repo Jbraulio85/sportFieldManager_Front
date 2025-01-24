@@ -1,20 +1,18 @@
-import { useState, useEffect } from 'react';
-import img1 from '../../assets/img/Landscape1.jpg'
-import img2 from '../../assets/img/Landscape2.jpg'
-import img3 from '../../assets/img/Landscape3.jpg'
-import img4 from '../../assets/img/Landscape4.jpg'
-import img5 from '../../assets/img/Landscape5.jpg'
+import { useState, useEffect } from "react";
+import img1 from "../../assets/img/Landscape1.jpg";
+import img2 from "../../assets/img/Landscape2.jpg";
+import img3 from "../../assets/img/Landscape3.jpg";
+import img4 from "../../assets/img/Landscape4.jpg";
+import img5 from "../../assets/img/Landscape5.jpg";
 
 export const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = [
-    img1, img2, img3, img4, img5
-  ];
+  const images = [img1, img2, img3, img4, img5];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage(prevImage => (prevImage + 1) % images.length);
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -26,7 +24,7 @@ export const Home = () => {
         <img
           key={index}
           src={image}
-          className={`absolute w-full h-full object-cover transition-opacity duration-700 ${index === currentImage ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute w-full h-full object-cover transition-opacity duration-700 ${index === currentImage ? "opacity-100" : "opacity-0"}`}
           alt={`Slide ${index + 1}`}
         />
       ))}
@@ -34,7 +32,7 @@ export const Home = () => {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`btn btn-xs ${index === currentImage ? 'btn-active' : ''}`}
+            className={`btn btn-xs ${index === currentImage ? "btn-active" : ""}`}
             onClick={() => setCurrentImage(index)}
           >
             {index + 1}

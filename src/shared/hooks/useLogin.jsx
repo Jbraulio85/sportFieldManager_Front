@@ -22,7 +22,9 @@ export const useLogin = () => {
         navigate("/");
       }
     } catch (error) {
-      toast.error("No se pudo conectar con el servidor. Intenta de nuevo más tarde.");
+      toast.error(
+        "No se pudo conectar con el servidor. Intenta de nuevo más tarde.",
+      );
     } finally {
       setIsLoading(false);
     }

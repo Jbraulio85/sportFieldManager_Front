@@ -5,12 +5,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-400 p-4 flex justify-between items-center">
       <aside className="flex items-center ml-8">
-        <img
-          src={shucodeLogo}
-          width="30"
-          height="30"
-          alt="Shucode Logo"
-        />
+        <img src={shucodeLogo} width="30" height="30" alt="Shucode Logo" />
         <span className="ml-4 flex items-center">
           <p className="m-0 p-0 leading-none text-base">
             © {new Date().getFullYear()} Shucode

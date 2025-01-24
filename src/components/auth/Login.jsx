@@ -14,7 +14,7 @@ export const Login = ({ switchAuthHandler }) => {
     e.preventDefault();
     if (!identifier || !password) {
       toast.error(
-        "Please enter both identifier (email or username) and password."
+        "Please enter both identifier (email or username) and password.",
       );
       return;
     }
@@ -95,7 +95,7 @@ export const Login = ({ switchAuthHandler }) => {
           onClick={switchAuthHandler}
           className="block text-center text-sm text-blue-600 cursor-pointer hover:underline"
         >
-          ¿No tienes cuenta?...  ¡Registrate acá!
+          ¿No tienes cuenta?... ¡Registrate acá!
         </span>
       </div>
     </div>
